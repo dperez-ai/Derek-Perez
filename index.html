@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Derek Perez | Finance, University of Georgia</title>
+  <meta name="description" content="Derek Perez is a finance student at the University of Georgia recruiting for full-time investment banking and private equity roles. Class of 2029.">
+  <meta name="theme-color" content="#0B1B3F">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Derek Perez | Finance, University of Georgia">
+  <meta property="og:description" content="Derek Perez is a finance student at the University of Georgia recruiting for full-time investment banking and private equity roles. Class of 2029.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap">
+  <style>
+    :root {
+      --navy: #0B1B3F;
+      --backdrop: #DDE1E8;
+      --page: #FFFFFF;
+      --text-2: #4A5468;
+      --hairline: #C9D0DB;
+      --red: #BA0C2F;
+      --on-navy: #D6DCE8;
+      --on-navy-muted: #B8C2D6;
+      --on-navy-rule: rgba(255, 255, 255, .28);
+
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+      --shadow: 0 1px 2px rgba(11, 27, 63, .12), 0 12px 40px rgba(11, 27, 63, .1);
+      --pad-x: 56px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--backdrop);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, p, ul, ol, dl, dd { margin: 0; }
+    ul { padding: 0; list-style: none; }
+    h1, h2 { text-wrap: balance; }
+
+    a { color: inherit; }
+    main:focus { outline: none; }
+    a:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+      border-radius: 1px;
+    }
+    .on-navy a:focus-visible { outline-color: #FFFFFF; }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      line-height: 1.6;
+    }
+
+    .rule {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin: 20px 0 36px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 10;
+      padding: 10px 14px;
+      background: #FFFFFF;
+      color: var(--navy);
+      text-decoration: none;
+      transform: translateY(-150%);
+      transition: transform 150ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Ticker tape */
+    .ticker {
+      background: var(--navy);
+      color: #FFFFFF;
+      overflow: hidden;
+      padding: 13px 0;
+    }
+    .ticker__track {
+      display: flex;
+      width: max-content;
+      animation: ticker 80s linear infinite;
+    }
+    .ticker:hover .ticker__track { animation-play-state: paused; }
+    .ticker__group {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .ticker__item {
+      white-space: nowrap;
+      padding: 0 28px;
+    }
+    .ticker__sep {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Pages */
+    main {
+      padding: 40px 32px 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .page {
+      width: 100%;
+      max-width: 1040px;
+      min-height: 585px;
+      margin: 0 auto;
+      background: var(--page);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      padding: 36px var(--pad-x) 28px;
+    }
+
+    .strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px 24px;
+      color: var(--text-2);
+    }
+    .strip--head {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--hairline);
+      margin-bottom: 44px;
+    }
+    .strip--foot {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--hairline);
+    }
+    .page__body { margin-bottom: 48px; }
+
+    .page h2 {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+    }
+
+    /* Page 1: Cover */
+    .cover {
+      background: var(--navy);
+      color: #FFFFFF;
+    }
+    .cover .strip { color: var(--on-navy-muted); }
+    .cover__main {
+      margin-top: auto;
+      padding: 80px 0 56px;
+    }
+    .cover__rule {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 28px;
+    }
+    .cover h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(48px, 9vw, 128px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .cover__sub {
+      margin-top: 22px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.3;
+      color: var(--on-navy);
+    }
+    .cover .strip--foot {
+      margin-top: 0;
+      border-top-color: var(--on-navy-rule);
+    }
+    .cover .strip--foot span { max-width: 44ch; }
+    .cover .strip--foot span:last-child { text-align: right; }
+
+    /* Page 2: Executive summary */
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 40px 64px;
+    }
+    .facts {
+      flex: 0 1 340px;
+      min-width: 0;
+      border-top: 1px solid var(--navy);
+    }
+    .facts__row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .facts dt {
+      color: var(--text-2);
+      padding-top: 3px;
+    }
+    .facts dd {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .prose {
+      flex: 1 1 360px;
+      min-width: 0;
+      max-width: 520px;
+      font-family: var(--serif);
+      font-size: 21px;
+      line-height: 1.5;
+    }
+    .prose p + p { margin-top: 1em; }
+    .prose strong { font-weight: 600; }
+
+    /* Page 3: Tombstones */
+    .tombstones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+      gap: 20px;
+    }
+    .tombstone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      padding: 32px 22px 26px;
+      background: #FFFFFF;
+      border: 1px solid var(--navy);
+      outline: 1px solid var(--navy);
+      outline-offset: -7px;
+      transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+    .tombstone:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(11, 27, 63, .1);
+    }
+    .tombstone__role { color: var(--text-2); }
+    .tombstone__firm {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .tombstone__bar {
+      width: 36px;
+      height: 1px;
+      background: var(--navy);
+    }
+    .tombstone__detail {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .tombstone__date {
+      margin-top: auto;
+      padding-top: 8px;
+      color: var(--text-2);
+    }
+
+    /* Page 4: Campus involvement */
+    .roster__head,
+    .roster__row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px 32px;
+    }
+    .roster__head {
+      padding: 10px 0;
+      border-top: 1px solid var(--navy);
+      border-bottom: 1px solid var(--navy);
+      color: var(--text-2);
+    }
+    .roster__row {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .roster__org {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+    .roster__sub {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--text-2);
+    }
+    .roster__role,
+    .roster__head > :last-child { text-align: right; }
+
+    /* Page 5: Appendix and next steps */
+    .page--split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+    }
+    .panel {
+      display: flex;
+      flex-direction: column;
+      padding: 36px var(--pad-x) 28px;
+      min-width: 0;
+    }
+    .interests {
+      border-top: 1px solid var(--navy);
+      border-bottom: 1px solid var(--navy);
+    }
+    .interests li {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.2;
+      padding: 14px 0;
+    }
+    .interests li + li { border-top: 1px solid var(--hairline); }
+    .interests__caption {
+      margin-top: 14px;
+      color: var(--text-2);
+    }
+
+    .panel--navy {
+      background: var(--navy);
+      color: #FFFFFF;
+    }
+    .panel--navy .panel__label {
+      color: var(--on-navy-muted);
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--on-navy-rule);
+    }
+    .contact {
+      margin: auto 0;
+      padding: 56px 0 48px;
+    }
+    .panel--navy h2 {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+    }
+    .contact__note {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--on-navy);
+      max-width: 380px;
+    }
+    .contact__links {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .contact__links a {
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.35;
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+      text-decoration-color: rgba(255, 255, 255, .35);
+      overflow-wrap: anywhere;
+      transition: text-decoration-color 200ms ease;
+    }
+    .contact__links a:hover { text-decoration-color: #FFFFFF; }
+    .panel--navy .panel__sign { color: var(--on-navy-muted); }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .page--split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad-x: 24px; }
+      main { padding: 32px 32px 56px; gap: 32px; }
+      .page { min-height: 0; padding-top: 28px; }
+      .cover { min-height: 540px; }
+      .panel { padding-top: 28px; }
+      .page h2 { font-size: 34px; }
+      .panel--navy h2 { font-size: 44px; }
+      .strip--head { margin-bottom: 32px; }
+      .rule { margin-bottom: 28px; }
+      .prose { font-size: 19px; }
+      .roster__row { grid-template-columns: 1fr; }
+      .roster__role { text-align: left; }
+      .cover .strip--foot span:last-child { text-align: left; }
+      .roster__org { font-size: 28px; }
+      .interests li { font-size: 30px; }
+      .contact__links a { font-size: 20px; }
+    }
+    @media (max-width: 400px) {
+      main { padding-left: 16px; padding-right: 16px; }
+      :root { --pad-x: 20px; }
+      .facts__row { grid-template-columns: 1fr; gap: 2px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker__track { animation: none; }
+      .tombstone, .skip-link, .contact__links a { transition: none; }
+      .tombstone:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link label" href="#content">Skip to content</a>
+
+  <header class="ticker label" aria-label="Roles">
+    <div class="ticker__track">
+      <ul class="ticker__group">
+        <li class="ticker__item">Bridgeway Advisors · Investment Banking · Summer 2025</li><li class="ticker__sep" aria-hidden="true"></li>
+        <li class="ticker__item">SellSide Group · Middle-Market M&amp;A · Energy</li><li class="ticker__sep" aria-hidden="true"></li>
+        <li class="ticker__item">Southern Company · Corporate Finance &amp; Accounting · Summer 2026</li><li class="ticker__sep" aria-hidden="true"></li>
+        <li class="ticker__item">Alpha Epsilon Equity Fund · Energy Equity Research</li><li class="ticker__sep" aria-hidden="true"></li>
+        <li class="ticker__item">Claude Club</li><li class="ticker__sep" aria-hidden="true"></li>
+        <li class="ticker__item">Phi Chi Theta</li><li class="ticker__sep" aria-hidden="true"></li>
+      </ul>
+      <ul class="ticker__group" aria-hidden="true">
+        <li class="ticker__item">Bridgeway Advisors · Investment Banking · Summer 2025</li><li class="ticker__sep"></li>
+        <li class="ticker__item">SellSide Group · Middle-Market M&amp;A · Energy</li><li class="ticker__sep"></li>
+        <li class="ticker__item">Southern Company · Corporate Finance &amp; Accounting · Summer 2026</li><li class="ticker__sep"></li>
+        <li class="ticker__item">Alpha Epsilon Equity Fund · Energy Equity Research</li><li class="ticker__sep"></li>
+        <li class="ticker__item">Claude Club</li><li class="ticker__sep"></li>
+        <li class="ticker__item">Phi Chi Theta</li><li class="ticker__sep"></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="content" tabindex="-1">
+
+    <!-- Page 1: Cover -->
+    <section class="page cover on-navy" aria-labelledby="cover-title">
+      <div class="strip label">
+        <span>Discussion materials</span>
+        <span>Class of 2029</span>
+      </div>
+      <div class="cover__main">
+        <span class="cover__rule" aria-hidden="true"></span>
+        <h1 id="cover-title">Derek Perez</h1>
+        <p class="cover__sub">Finance · University of Georgia</p>
+      </div>
+      <div class="strip strip--foot label">
+        <span>Recruiting for full-time investment banking and private equity roles</span>
+        <span>Private and confidential. Forward freely to recruiters.</span>
+      </div>
+    </section>
+
+    <!-- Page 2: Executive summary -->
+    <section class="page" aria-labelledby="summary-title">
+      <div class="strip strip--head label">
+        <span>Derek Perez</span>
+        <span>Executive summary</span>
+      </div>
+      <div class="page__body">
+        <h2 id="summary-title">Executive summary</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <div class="summary">
+          <dl class="facts">
+            <div class="facts__row"><dt class="label">School</dt><dd>University of Georgia</dd></div>
+            <div class="facts__row"><dt class="label">Major</dt><dd>Finance</dd></div>
+            <div class="facts__row"><dt class="label">Graduation</dt><dd>May 2029</dd></div>
+            <div class="facts__row"><dt class="label">Internships</dt><dd>Three: two investment banking, one corporate finance</dd></div>
+            <div class="facts__row"><dt class="label">Sectors</dt><dd>Consumer, energy</dd></div>
+            <div class="facts__row"><dt class="label">Recruiting</dt><dd>Full-time investment banking and private equity</dd></div>
+          </dl>
+          <div class="prose">
+            <p>Derek is a finance student at the University of Georgia, graduating in May 2029. He has completed three internships: two in investment banking and one in corporate finance.</p>
+            <p>His work spans bond comparables in the consumer sector, merger and acquisition case studies, middle-market energy M&amp;A, deal origination, and corporate finance and accounting, including over $1M of state tax credits processed at Southern Company. On campus, he researches the energy sector for the Alpha Epsilon Equity Fund.</p>
+            <p><strong>He is recruiting for full-time investment banking and private equity roles.</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="strip strip--foot label">
+        <span>Discussion materials</span>
+        <span>2</span>
+      </div>
+    </section>
+
+    <!-- Page 3: Selected experience -->
+    <section class="page" aria-labelledby="experience-title">
+      <div class="strip strip--head label">
+        <span>Derek Perez</span>
+        <span>Selected experience</span>
+      </div>
+      <div class="page__body">
+        <h2 id="experience-title">Selected experience</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <div class="tombstones">
+          <article class="tombstone">
+            <p class="tombstone__role label">Investment banking<br>intern</p>
+            <h3 class="tombstone__firm">Bridgeway<br>Advisors</h3>
+            <span class="tombstone__bar" aria-hidden="true"></span>
+            <p class="tombstone__detail">Bond comparables projects<br>Consumer sector<br>M&amp;A case studies</p>
+            <p class="tombstone__date label">Summer 2025</p>
+          </article>
+          <article class="tombstone">
+            <p class="tombstone__role label">Investment banking<br>intern</p>
+            <h3 class="tombstone__firm">SellSide<br>Group</h3>
+            <span class="tombstone__bar" aria-hidden="true"></span>
+            <p class="tombstone__detail">Middle-market M&amp;A<br>Energy sector<br>Origination rotation</p>
+            <p class="tombstone__date label">Jan – May 2026</p>
+          </article>
+          <article class="tombstone">
+            <p class="tombstone__role label">Corporate finance &amp;<br>accounting intern</p>
+            <h3 class="tombstone__firm">Southern<br>Company</h3>
+            <span class="tombstone__bar" aria-hidden="true"></span>
+            <p class="tombstone__detail">Corporate finance<br>Processed over $1M of<br>state tax credits</p>
+            <p class="tombstone__date label">Summer 2026</p>
+          </article>
+        </div>
+      </div>
+      <div class="strip strip--foot label">
+        <span>Discussion materials</span>
+        <span>3</span>
+      </div>
+    </section>
+
+    <!-- Page 4: Campus involvement -->
+    <section class="page" aria-labelledby="campus-title">
+      <div class="strip strip--head label">
+        <span>Derek Perez</span>
+        <span>Campus involvement</span>
+      </div>
+      <div class="page__body">
+        <h2 id="campus-title">Campus involvement</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <div class="roster" role="table" aria-label="Campus involvement">
+          <div class="roster__head label" role="row">
+            <span role="columnheader">Organization</span>
+            <span role="columnheader">Role</span>
+          </div>
+          <div class="roster__row" role="row">
+            <div class="roster__org" role="cell">Alpha Epsilon Equity Fund<span class="roster__sub">Student-managed investment fund</span></div>
+            <div class="roster__role label" role="cell">Equity researcher<br>Energy sector</div>
+          </div>
+          <div class="roster__row" role="row">
+            <div class="roster__org" role="cell">Claude Club</div>
+            <div class="roster__role label" role="cell">Member</div>
+          </div>
+          <div class="roster__row" role="row">
+            <div class="roster__org" role="cell">Phi Chi Theta<span class="roster__sub">Fraternity</span></div>
+            <div class="roster__role label" role="cell">Member</div>
+          </div>
+        </div>
+      </div>
+      <div class="strip strip--foot label">
+        <span>Discussion materials</span>
+        <span>4</span>
+      </div>
+    </section>
+
+    <!-- Page 5: Appendix and next steps -->
+    <section class="page page--split" aria-labelledby="appendix-title">
+      <div class="panel">
+        <div class="strip strip--head label">
+          <span>Derek Perez</span>
+          <span>Appendix</span>
+        </div>
+        <div class="page__body">
+          <h2 id="appendix-title">Outside the office</h2>
+          <span class="rule" aria-hidden="true"></span>
+          <ul class="interests">
+            <li>Pickleball</li>
+            <li>Soccer</li>
+            <li>College football</li>
+          </ul>
+          <p class="interests__caption label">Full Dawgs on Saturday</p>
+        </div>
+        <div class="strip strip--foot label">
+          <span>Discussion materials</span>
+          <span>5</span>
+        </div>
+      </div>
+      <div class="panel panel--navy on-navy">
+        <p class="panel__label label">Next steps</p>
+        <div class="contact">
+          <h2 id="contact-title">Let’s talk.</h2>
+          <span class="rule" aria-hidden="true"></span>
+          <p class="contact__note">Recruiting for full-time investment banking and private equity roles. Class of 2029.</p>
+          <div class="contact__links">
+            <a href="mailto:derek.perez.genthiruz@gmail.com">derek.perez.genthiruz<wbr>@gmail.com</a>
+            <a href="https://www.linkedin.com/in/dp111" target="_blank" rel="noopener">linkedin.com/in/dp111</a>
+          </div>
+        </div>
+        <p class="panel__sign label">Derek Perez · UGA Finance</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
